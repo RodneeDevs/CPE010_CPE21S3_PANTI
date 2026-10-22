@@ -1,5 +1,3 @@
-#CPE010_CPE21S3_PANTI
-
 Panti, Dominic Rodnee A.
 
 CPE 010: Data Structures and Algorithms
