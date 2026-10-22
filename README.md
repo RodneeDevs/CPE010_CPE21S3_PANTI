@@ -1,4 +1,4 @@
-Panti, Dominic Rodnee A.
+Panti, Dominic Rodnee A. 
 
 CPE 010: Data Structures and Algorithms
 
