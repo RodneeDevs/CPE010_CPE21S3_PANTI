@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string.h>
+
+class Student{
+  private:
+  std::string studentName;
+  int studentAge;
+
+ public:
+Student(std::string newName ="Joma", int newAge=67){
+studentName = std::move(newName);
+studentAge = newAge;
+std::cout << "Constructor Called." << std::endl;
+
+};  
+  ~Student(){
+std::cout << "Destructor Called." << std::endl;
+}
+Student(const Student &copyStudent){
+std::cout << "Copy Constructor Called" << std::endl;
+studentName = copyStudent.studentName;
+studentAge = copyStudent.studentAge;
+}
+void printDetails(){
+std::cout << this->studentName << " " << this->studentAge << std::endl;
+}
+};
+
+int main() {
+const size_t j = 5;
+Student studentList[j] = {};
+std::string namesList[j] = {"Elaiza", "Fenzie", "Rodnee", "Nina", "Carlo"};
+int ageList[j] = {21, 19, 18, 19, 20};
+
+for(int i = 0; i < j; i++){ 
+Student *ptr = new Student(namesList[i], ageList[i]);
+studentList[i] = *ptr;
+delete[] ptr;
+ptr=nullptr;
+}
+for(int i = 0; i < j; i++){ 
+studentList[i].printDetails();
+}
+
+return 0;
+}
